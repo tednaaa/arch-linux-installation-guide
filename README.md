@@ -20,7 +20,7 @@ gdisk /dev/sda
 gdisk /dev/sdb
 ```
 
-> Create partitions for `root`, `boot`, `var`, `home` directories (for swap partition use Linux swap / Solaris type [82])
+> Create partitions for `root` `boot` `var` `home` directories (for swap partition use Linux swap / Solaris type [82])
 
 ```
 example:
