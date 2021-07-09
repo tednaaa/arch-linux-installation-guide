@@ -56,9 +56,23 @@ mkfs.btrfs /dev/sdb1
 example:
 mount /dev/{partition_name} /mnt/{directory_name}
 
-mount /dev/sda4 /mnt
+mount -o noatime,compress=zstd,space_cache,discard=async /dev/sda4 /mnt
 mkdir /mnt/{boot,var,home}
 mount /dev/sda1 /mnt/boot
-mount /dev/sda2 /mnt/var
-mount /dev/sdb1 /mnt/home
+mount -o noatime,compress=zstd,space_cache,discard=async /dev/sda2 /mnt/var
+mount -o noatime,compress=zstd,space_cache,discard=async /dev/sdb1 /mnt/home
+```
+
+> Update packages and install base linux system
+
+```
+pacman -Syy
+pacstrap /mnt base linux linux-firmware nano dhcpcd grub
+```
+
+> Generate file system table and check
+
+```
+genfstab -U /mnt >> /mnt/etc/fstab
+cat /mnt/etc/fstab
 ```
