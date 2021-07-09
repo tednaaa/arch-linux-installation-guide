@@ -1,7 +1,17 @@
 # Install arch linux
 
-> check disks state
+> Check disks state
 
 ```
 lsblk
+```
+
+> Clear all partitions
+
+```
+gdisk /dev/{disk_name} (for example /dev/sda)
+x
+z
+y
+y
 ```
