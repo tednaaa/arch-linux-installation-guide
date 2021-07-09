@@ -109,7 +109,7 @@ passwd {username}
 nano /etc/sudoers (uncomment %wheel ALL=(ALL) ALL)
 ```
 
-> Set autostart
+> Enable autostart of dynamic host configuration protocol
 
 ```
 systemctl enable dhcpcd
@@ -125,4 +125,30 @@ mkinitcpio -p linux
 exit
 umount -R /mnt
 reboot
+```
+
+> Install xorg
+
+```
+sudo pacman -S xorg xorg-xinit xorg-aps mesa-libgl
+```
+
+> Install drivers
+
+```
+Intel: sudo pacman -S xf86-video-intel
+Nvidia: sudo pacman -S nvidia nvidia-settings
+AMD: sudo pacman -S xf86-video-amdgpu
+```
+
+> Install xfce4 and sddm
+
+```
+sudo pacman -S xfce4 sddm
+```
+
+> Enable autostart of simple desktop display manager
+
+```
+systemctl enable sddm
 ```
