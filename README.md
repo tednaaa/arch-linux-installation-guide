@@ -77,7 +77,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 ```
 
-> Config the pc
+> Chroot and set locales
 
 ```
 arch-chroot /mnt
@@ -85,13 +85,25 @@ arch-chroot /mnt
 nano /etc/locale.gen (uncomment en_US.UTF-8)
 locale-gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
+```
 
+> Set timezone
+
+```
 ln -sf /usr/share/zoneinfo/{country}/{city} /etc/localtime
 hwclock --systohc --utc
+```
 
+> Set hostname
+
+```
 echo {pc_name} > /etc/hostname
 passwd
+```
 
+> Add admin user
+
+```
 useradd -m -g users -G wheel -s /bin/bash {username}
 passwd {username}
 nano /etc/sudoers (uncomment %wheel ALL=(ALL) ALL)
