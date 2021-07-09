@@ -67,7 +67,7 @@ mount -o noatime,compress=zstd,space_cache,discard=async /dev/sdb1 /mnt/home
 
 ```
 pacman -Syy
-pacstrap /mnt base linux linux-firmware nano dhcpcd grub
+pacstrap /mnt base linux linux-firmware nano dhcpcd grub btrfs-progs
 ```
 
 > Generate file system table and check
