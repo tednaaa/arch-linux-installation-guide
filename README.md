@@ -76,3 +76,36 @@ pacstrap /mnt base linux linux-firmware nano dhcpcd grub btrfs-progs
 genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 ```
+
+> Config the pc
+
+```
+arch-chroot /mnt
+nano /etc/locale.gen (uncomment en_US.UTF-8)
+locale-gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+ln -sf /usr/share/zoneinfo/{country}/{city} /etc/localtime
+hwclock --systohc --utc
+echo {pc_name} > /etc/hostname
+passwd
+useradd -m -g users -G wheel -s /bin/bash {username}
+passwd {username}
+nano /etc/sudoers (uncomment %wheel ALL=(ALL) ALL)
+```
+
+> Set autostart
+
+```
+systemctl enable dhcpcd
+```
+
+> Set up boot grub and reboot
+
+```
+grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+mkinitcpio -p linux
+exit
+umount -R /mnt
+reboot
+```
