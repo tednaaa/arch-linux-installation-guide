@@ -130,7 +130,7 @@ reboot
 > Install xorg
 
 ```
-sudo pacman -S xorg xorg-xinit xorg-aps mesa-libgl
+sudo pacman -S xorg
 ```
 
 > Install drivers
