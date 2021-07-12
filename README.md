@@ -28,7 +28,6 @@ fdisk /dev/{disk_name}
 
 fdisk /dev/sda
 boot = 512M (SSD)
-var = 512M (SSD)
 swap = 8192M (SSD)
 root = remaining free space (SSD)
 
