@@ -20,19 +20,19 @@ gdisk /dev/sda
 gdisk /dev/sdb
 ```
 
-> Create partitions for `root` `boot` `home` directories (for swap partition use Linux swap / Solaris type [82])
+> Create partitions for `root` `boot` `home` directories
 
 ```
 example:
-fdisk /dev/{disk_name}
+сfdisk /dev/{disk_name}
 
-fdisk /dev/sda
-boot = 512M (SSD)
-swap = 8192M (SSD)
-root = remaining free space (SSD)
+сfdisk /dev/sda
+boot = 512M (SSD) [BIOS boot]
+swap = 8192M (SSD) [Linux swap]
+root = remaining free space (SSD) [Linux filesystem]
 
-fdisk /dev/sdb
-home = remaining free space (HDD)
+сfdisk /dev/sdb
+home = remaining free space (HDD) [Linux filesystem]
 ```
 
 > Format the partitions
