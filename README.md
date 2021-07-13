@@ -64,7 +64,7 @@ mount -o noatime,compress=zstd,space_cache,discard=async /dev/sdb1 /mnt/home
 
 ```
 pacman -Syy
-pacstrap /mnt base linux linux-firmware nano dhcpcd grub btrfs-progs
+pacstrap /mnt base linux linux-firmware nano dhcpcd grub btrfs-progs sudo
 ```
 
 > Generate file system table and check
@@ -127,7 +127,7 @@ reboot
 > Install xorg
 
 ```
-sudo pacman -S xorg xorg-xinit xorg-aps mesa-libgl
+sudo pacman -S xorg
 ```
 
 > Install drivers
