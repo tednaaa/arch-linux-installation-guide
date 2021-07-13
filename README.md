@@ -54,7 +54,7 @@ mkfs.btrfs /dev/sdb1
 example:
 mount /dev/{partition_name} /mnt/{directory_name}
 
-mount -o noatime,compress=zstd,space_cache,discard=async /dev/sda4 /mnt
+mount -o noatime,compress=zstd,space_cache,discard=async /dev/sda3 /mnt
 mkdir /mnt/{boot,home}
 mount /dev/sda1 /mnt/boot
 mount -o noatime,compress=zstd,space_cache,discard=async /dev/sdb1 /mnt/home
