@@ -87,7 +87,7 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 > Set timezone
 
 ```
-ln -sf /usr/share/zoneinfo/{country}/{city} /etc/localtime
+ln -sf /usr/share/zoneinfo/{continent}/{city} /etc/localtime
 hwclock --systohc --utc
 ```
 
