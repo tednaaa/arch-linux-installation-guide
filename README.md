@@ -138,8 +138,9 @@ AMD: sudo pacman -S xf86-video-amdgpu
 sudo pacman -S xfce4 sddm
 ```
 
-> Enable autostart of simple desktop display manager
+> Enable autostart of simple desktop display manager and reboot
 
 ```
 systemctl enable sddm
+reboot
 ```
