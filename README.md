@@ -1,4 +1,4 @@
-# Guide: how to install arch linux
+# Guide: how to install arch linux 🎃
 
 > Check disks state
 
